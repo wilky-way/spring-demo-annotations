@@ -1,11 +1,12 @@
 package com.luv2code.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TennisCoach implements Coach {
-    @Autowired // field injection
+    //@Autowired // field injection
     private FortuneService fortuneService;
 
     //define default constructor
@@ -30,13 +31,11 @@ public class TennisCoach implements Coach {
     }
     */
 
-    /*
     // constructor injection
     @Autowired // Spring scans for component that implements FortuneService interface... ex. HappyFortuneService
-    public TennisCoach(FortuneService fortuneService) {
+    public TennisCoach(@Qualifier("randomFortuneService") FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
-    */
 
     @Override
     public String getDailyWorkout() {
