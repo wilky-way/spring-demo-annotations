@@ -13,14 +13,23 @@ public class TennisCoach implements Coach {
         System.out.println(">> TennisCoach: inside default constructor");
     }
 
-    // define a setter method
+    @Autowired
+    public void doSomeCrazyStuff(FortuneService theFortuneService){
+        System.out.println(">> TennisCoach: inside doSomeCrazyStuff method");
+        fortuneService = theFortuneService;
+    }
+
+    /*
+    // define a setter method for injection
     @Autowired
     public void setFortuneService(FortuneService theFortuneService){
         System.out.println(">> TennisCoach: inside setFortuneService");
         fortuneService = theFortuneService;
     }
+    */
 
     /*
+    // constructor injection
     @Autowired // Spring scans for component that implements FortuneService interface... ex. HappyFortuneService
     public TennisCoach(FortuneService fortuneService) {
         this.fortuneService = fortuneService;
