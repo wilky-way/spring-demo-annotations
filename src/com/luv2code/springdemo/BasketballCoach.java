@@ -9,4 +9,9 @@ public class BasketballCoach implements Coach {
     public String getDailyWorkout() {
         return "Shooty Hoops is fun";
     }
+
+    @Override
+    public String getDailyFortune() {
+        return null;
+    }
 }
